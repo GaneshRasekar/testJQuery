@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { margin: 0; }
+div {
+	position: fixed;
+	font-family: "Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+.a {
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-size: cover;
+}
+
+.b {
+	left: 41%;
+	top: 25.5%;
+	right: 20%;
+	bottom: 25.5%;
+	background-attachment: fixed;
+	height:200px;
+	width:200px;
+	background-color:#8000666b;
+	position:absolute;
+    box-shadow: 0 0 20px rgba(124,124,124,1);
+	z-index:2;
+	 border-radius: 50px;
+}
+
+
+.error {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0,0.8);
+	color: #eee;
+	padding: 20px;
+	display: none;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+
+$( '.b').mouseenter(function() {
+  $( this ).fadeOut( 2000 );
+  $( this ).fadeIn( 2000 );
+});
+
+	try {
+		$('.a').ripples({
+			resolution: 256,
+			perturbance: 0.015
+		});
+	}
+	catch (e) {
+		$('.error').show().text(e);
+	}
+});
+</script>
+
+</head>
+<body>
+
+
+
+<div class="b"></div>
+<div class="a" style="background-image:url(https://d1w9csuen3k837.cloudfront.net/Pictures/2000x1125/0/0/6/133006_water_shutterstock_630976043.jpg)">
+</div>
+
+
+
+
+<div class="error"></div>
+
+<script src="http://www.jqueryscript.net/demo/jQuery-Plugin-For-Water-Ripple-Animation-ripples/js/jquery.ripples.js">
+</script> 
+
+</body>
+</html>
